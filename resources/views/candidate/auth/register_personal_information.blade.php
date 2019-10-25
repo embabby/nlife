@@ -88,7 +88,7 @@
                                                 <i class="fa fa-mobile" aria-hidden="true"> </i>
                                             </label>
                                             <div class="col-md-8">
-                                                {!! Form::tel('phone1',Auth::guard('candidate')->user()->phone1,['class'=>'form-control']) !!}
+                                                {!! Form::number('phone1',Auth::guard('candidate')->user()->phone1,['class'=>'form-control']) !!}
                                                 @if ($errors->has('phone1'))
                                                     <div class="alert alert-danger">{{ $errors->first('phone1') }}</div>
                                                 @endif
@@ -99,7 +99,7 @@
                                                 <i class="fa fa-mobile" aria-hidden="true"> </i>
                                             </label>
                                             <div class="col-md-8">
-                                                {!! Form::tel('phone2',null,['class'=>'form-control']) !!}
+                                                {!! Form::number('phone2',null,['class'=>'form-control']) !!}
                                                 @if ($errors->has('phone2'))
                                                     <div class="alert alert-danger">{{ $errors->first('phone2') }}</div>
                                                 @endif

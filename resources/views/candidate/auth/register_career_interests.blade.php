@@ -52,10 +52,10 @@
                                         <div class="title">
                                             <div class="green"></div>
                                             <h1>Job Types</h1>
+                                        </div>
                                             @if ($errors->has('job_types'))
                                                 <div class="alert alert-danger">{{ $errors->first('job_types') }}</div>
                                             @endif
-                                        </div>
                                     </div>
                                     <div class="top_content">
                                         @foreach($job_types as $job_type)
@@ -106,7 +106,7 @@
                             </div>
                             <div class="text-center fade-in">
                                 <button type="submit" class="btn btn-success">Next</button>
-                                <a  class="return">Return</a>
+                                <a  href="{{ url()->previous() }}" class="return">Return</a>
                             </div>
                                 {!! Form::close() !!}
                         </div><!--/.col-12-->

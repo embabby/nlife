@@ -496,12 +496,15 @@
 
                             </div>
                             <!--End Edit -->
-
-                            <h4 class="mytitle">{{$candidate->university}}</h4>
+                            <!-- <h4 class="mytitle">{{$candidate->university}}</h4>
                             <h4 class="mydescription">{{$candidate->faculty}}</h4>
                             <h4 class="mydescription">{{$candidate->major}}</h4>
-                            <h5>{{$candidate->university_start_date?'From':''}} <span class="mystart"> {{$candidate->university_start_date}}</span> {{$candidate->university_end_date?'To':''}} <span class="myend">{{$candidate->university_end_date}}</span></h5>
+                             -->
 
+                            <p><strong> University</strong> {{$candidate->university}}</p>
+                            <p><strong> Faculty</strong> {{$candidate->faculty}}</p>
+                            <p><strong> Major</strong> {{$candidate->major}}</p>
+                            <h5>{{$candidate->university_start_date?'From':''}} <span class="mystart"> {{$candidate->university_start_date}}</span> {{$candidate->university_end_date?'To':''}}<span class="myend">{{$candidate->university_end_date}}</span></h5>                    
 
                         </div>
                     </div>

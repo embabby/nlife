@@ -53,7 +53,7 @@
                                              <!-- end notify title -->
                         <!-- notify content -->
                         <div class="drop-content">
-                            <li class="name">Ahmed Tarek</li>
+                            <li class="name">{{$candidate->first_name}}</li>
                             <li class="log">
                                 <a href="{{ url('/canidate/logout') }}"
                                    onclick="event.preventDefault();

@@ -50,7 +50,7 @@
                                                         <div class="form-conrol">
                                                             <label class="control-label col-md-3 mylabel">Mobile<i class="fa fa-mobile"></i>  </label>
                                                             <div class="col-md-7 regester">
-                                                                <input required type="tel" name="phone1" maxlength="20"  value="{{ old('phone1') }}" placeholder="ex: 1233456" class="form-control @error('phone1') is-invalid @enderror" >
+                                                                <input required type="number" name="phone1" maxlength="20"  value="{{ old('phone1') }}" placeholder="ex: 1233456" class="form-control @error('phone1') is-invalid @enderror" >
                                                                 @if ($errors->has('phone1'))
                                                                     <div class="alert alert-danger">{{ $errors->first('phone1') }}</div>
                                                                 @endif

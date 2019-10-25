@@ -8,9 +8,9 @@
                     <div class="navigation-bar wow fadeInDown">
                         <div class="image">
                             @if($candidate->avatar && Storage::exists($candidate->avatar))
-                                <img src="{{url(asset('storage/'.$candidate->avatar))}}" class="img-responsive">
+                                <img src="{{url(asset('avatars/'.$candidate->avatar))}}" class="img-responsive">
                             @else
-                                <img src="{{url(asset('storage/'.gender_image($candidate->gender_id)))}}"  class="img-responsive" alt="">
+                                <img src="{{url(asset('avatars/'.$candidate->gender->name.'.png'))}}"  class="img-responsive" alt="">
                             @endif
                         </div>
                         <div class="head-info">
@@ -112,7 +112,10 @@
                                     <h5>Country : <span style="color: #6E6F71"> {{$candidate->country?$candidate->country->name:''}} </span></h5>
                                     <h5>City  : <span style="color: #6E6F71"> {{$candidate->city?$candidate->city->name:''}} </span></h5>
                                     <h5>Address  : <span style="color: #6E6F71"> {{$candidate->address}} </span></h5>
+
+                                    @if(isset($candidate->birth_date))
                                     <h5>Age  : <span style="color: #6E6F71">{{\Carbon\Carbon::parse($candidate->birth_date)->age}}Y</span></h5>
+                                    @endif
                                     <h5>Gender  : <span style="color: #6E6F71"> {{$candidate->gender->name}} </span></h5>
                                     <h5>Major  : <span style="color: #6E6F71"> {{$candidate->major}} </span></h5>
                                     <h5>Degree  : <span style="color: #6E6F71"> {{$candidate->degree}} </span></h5>

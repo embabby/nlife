@@ -16,26 +16,38 @@
 <body>
 <!--log_in-->
 <div class="log_in">
+
+
+
+
+
     <!--login_form-->
     <div class="login_form wow fadeInDown">
+
+            @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li style="text-align: center;list-style: none;">{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
         <div class="form_title">
             <h1>SIGN IN</h1>
         </div>
             <form class="form-horizontal" role="form" method="POST" action="{{ url('/candidate/login') }}">
              {{ csrf_field() }}
-            <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }}">
+            <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>
                 <input type="email" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"  name="email" value="{{ old('email') }}" autofocus>
-            @if ($errors->has('email'))
-                  <div class="alert alert-danger">{{ $errors->first('email') }}</div>
-            @endif
+            
             </div>
-            <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">
+            <div class="form-group">
                 <label for="exampleInputPassword1">Password</label>
                 <input type="password" required name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                @if ($errors->has('password'))
-                      <div class="alert alert-danger">{{ $errors->first('password') }}</div>
-                @endif
+                
                 <a href="{{route('candidate.reset')}}"><small id="emailHelp" class="form-text text-muted">Forgot your Password ?</small></a>
             </div>
 
