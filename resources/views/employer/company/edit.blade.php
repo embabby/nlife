@@ -17,6 +17,14 @@
                  <div class="alert alert-success">{{ Session::get('success') }}</div>
              @elseif(Session::has('danger'))
                  <div class="alert alert-danger">{{ Session::get('danger') }}</div>
+             @elseif (count($errors) > 0)
+                <div class="alert alert-danger">
+                    <ul>
+                    @foreach ($errors->all() as $error)
+                        <li style="text-align: center;list-style: none;">{{ $error }}</li>
+                    @endforeach
+                    </ul>
+                </div>
              @endif
             <!--inner_content-->
             <div class="inner_content col-lg-12">

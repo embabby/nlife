@@ -13,6 +13,17 @@
 
         <!--inner_content-->
         <div class="inner_content col-lg-12">
+
+            @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li style="text-align: center;list-style: none;">{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
             <div class="left_side">
                 <div class="row">
                     <div class="update-content-part1">

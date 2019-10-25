@@ -29,7 +29,11 @@
                                     <div class="information">
                                         <h1><a href="{{route('jobs.show',$job->slug)}}">{{$job->job_title}}</a></h1>
                                         <ul class="company-info">
+                                            @if($job->hide_company==1)
+                                            <li> {{'Confidential'}} </li>
+                                            @else
                                             <li><a href="{{route('companyProfile.home',$job->company->slug)}}">{{$job->company->name}}</a></li>
+                                            @endif
                                             <li> {{$job->vacancies}} Vacancies</li>
                                             <li >{{$job->start_years_of_experience}}{{$job->end_years_of_experience?'-'.$job->end_years_of_experience:'+'}}Yrs Of Exp </li>
                                             <li><i class="fa fa-map-marker" aria-hidden="true"></i> {{$job->city?$job->city->name:''}}</li>

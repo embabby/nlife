@@ -24,7 +24,7 @@ class CompanyImagesController extends Controller
     {
         $request->validate([
             'image'=>'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
-            'title'=>'string|required'
+            'title'=>'string|required|max:100'
         ]);
 
         if($file=$request->file('image')){

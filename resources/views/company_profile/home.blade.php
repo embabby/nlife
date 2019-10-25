@@ -63,7 +63,10 @@
                     @if($i <4)
                         <?php $i++ ?>
                         <div class="photo col-lg-3 col-md-3 col-sm-3 col-xs-6">
-                            <img class="img-responsive img-thumbnail" src="{{asset('company_images/'.$image->image)}}">
+                            <img class="img-responsive img-thumbnail" src="{{url(asset('storage/'.$image->image))}}">
+
+                            
+
                         </div>
                     @endif
                 @endforeach

@@ -36,7 +36,7 @@ class HomeController extends Controller
                 ->OrwhereHas('job_job_tags',function($q) use($candidate_job_industries_tags) {
                     $q->whereIn('job_industry_tag_id', $candidate_job_industries_tags);
                 })
-                ->where('career_level_id',$candidate->career_level_id)->limit(8)->get();
+                ->where('career_level_id',$candidate->career_level_id)->limit(8)->orderBy('created_at','desc')->get();
 
 
         return view('candidate.home',compact('candidate','blogs','recommended_jobs'));
@@ -66,7 +66,7 @@ class HomeController extends Controller
                 ->OrwhereHas('job_job_tags',function($q) use($candidate_job_industries_tags) {
                     $q->whereIn('job_industry_tag_id', $candidate_job_industries_tags);
                 })
-                ->where('career_level_id',$candidate->career_level_id)->paginate(12);
+                ->where('career_level_id',$candidate->career_level_id)->orderBy('created_at','desc')->paginate(12);
         return view('candidate.jobs.recommended',compact('candidate','recommended_jobs'));
     }
 

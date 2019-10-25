@@ -27,6 +27,7 @@ class CompanyBenefitController extends Controller
         $request->validate([
             'benefits.*'=>'numeric',
         ]);
+        if ($request->input('benefits')){
         CompanyBenefit::where('company_id',$id)->delete();
         for ($i=0;$i<\count($request->input('benefits'));$i++){
             $benefit=Benefit::find($request->input('benefits')[$i]);
@@ -37,6 +38,7 @@ class CompanyBenefitController extends Controller
                     'benefit_category_id'=>$benefit->benefit_category_id
             ]);
             }
+        }
         }
         Session::flash('success','Company Benefits Updated Successfully');
         return redirect()->back();

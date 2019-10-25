@@ -175,7 +175,7 @@
                                         <div class="form-conrol">
                                             <label class="control-label col-md-3 mylabel">Mobile<i class="fa fa-mobile"></i>  </label>
                                             <div class="col-md-7 regester">
-                                                <input type="tel" name="phone" maxlength="20"  value="{{ old('phone') }}" placeholder="ex: +21233456" class="form-control @error('phone') is-invalid @enderror" >
+                                                <input type="number" name="phone" maxlength="20"  value="{{ old('phone') }}" placeholder="ex: +21233456" class="form-control @error('phone') is-invalid @enderror" >
                                                 @if ($errors->has('phone'))
                                                     <div class="alert alert-danger">{{ $errors->first('phone') }}</div>
                                                 @endif

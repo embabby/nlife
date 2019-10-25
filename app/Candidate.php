@@ -89,7 +89,7 @@ class Candidate extends Authenticatable
        return $this->belongsTo('App\ExperienceYear','years_of_experience_id');
     }
     function job_applications(){
-      return  $this->belongsToMany('App\Job','job_applicants','candidate_id','job_id');
+      return  $this->belongsToMany('App\Job','job_applicants','candidate_id','job_id')->orderBy('created_at', 'desc');
     }
     function saved_jobs(){
         return $this->belongsToMany('App\Job','candidate_saved_jobs','candidate_id','job_id');

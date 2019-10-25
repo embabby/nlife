@@ -8,7 +8,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel Multi Auth Guard') }}</title>
+    <!-- <title>{{ config('app.name', 'Laravel Multi Auth Guard') }}</title> -->
+    <title>{{setting('site.title')}}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -34,8 +35,8 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/employer') }}">
-                    {{ config('app.name', 'Laravel Multi Auth Guard') }}: Employer
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{setting('site.title')}}
                 </a>
             </div>
 

@@ -104,7 +104,7 @@
                             <ul class="nav navbar-nav">
                                 <li><a href="{{route('employer.dashboard')}}">Dashboard</a></li>
                                 <li><a href="{{route('companyProfile.home',$company->slug)}}">Organization</a></li>
-                                <li><a href="#">Jobs </a></li>
+                                <li><a href="{{route('employer-jobs.index')}}">Jobs </a></li>
                                 <li><a href="{{route('companyProfile.benefits',$company->slug)}}">Benefits </a></li>
                                 <li><a href="{{route('companyProfile.images',$company->slug)}}">Photos </a></li>
                                 <li class=" dropdown social navbar-right">

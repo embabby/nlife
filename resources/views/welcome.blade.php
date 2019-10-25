@@ -217,7 +217,7 @@
                     <li>Flexible packages based on your budget</li>
 
                 </ul>
-                <button>Get Free Employer Account</button>
+                <a href="{{route('employer.register')}}"> <button>Get Free Employer Account</button> </a>
             </div>
 
         </div>

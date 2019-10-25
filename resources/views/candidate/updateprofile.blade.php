@@ -147,7 +147,7 @@
                                 <div class="alert alert-danger">{{ $errors->first('avatar') }}</div>
                             @endif
                             <label> about me </label>
-                            <textarea class="form-control" name="about_me">{!! $candidate->about_me !!}</textarea>
+                            <textarea class="form-control" name="about_me"> {!! $candidate->about_me !!}</textarea>
                             @if ($errors->has('about_me'))
                                 <div class="alert alert-danger">{{ $errors->first('about_me') }}</div>
                             @endif

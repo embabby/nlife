@@ -42,6 +42,12 @@ class CompaniesAccountController extends Controller
             'address'=>'required|string',
             'about_company'=>'required|string'
         ]);
+
+        $this->validate($request, [
+        'job_industry' => 'required',
+        
+    ]);
+
         $name=sanitize($request->input('name'));
         $slug=$name.'-'.$id;
         $phone=sanitize($request->input('phone'));

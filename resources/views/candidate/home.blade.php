@@ -52,7 +52,7 @@
                 <div class="job-activity wow fadeIn">
                     <ul class="tabss">
                         <li class="tab-links currents" data-tab="recommended"> Recommended Jobs </li>
-                        <li class="tab-links" data-tab="saved">Saved Jobs  </li>
+                        <li class="tab-links" data-tab="savedd">Saved Jobs  </li>
                         <li class="tab-links" data-tab="applied">Applied Jobs  </li>
                     </ul>
                     <div class="all_tabs">
@@ -70,7 +70,11 @@
                                 </a>
                                 <div class="job-sub">
                                     <h3><a href="{{route('jobs.show',$job->slug)}}">{{$job->job_title}}</a></h3>
+                                    @if($job->hide_company==1)
+                                        <h4> {{'Confidential'}} </h4>
+                                        @else
                                     <h4>{{$job->company->name}} - {{$job->city?$job->city->name:''}} ( {{$job->country?$job->country->name:''}} ) </h4>
+                                    @endif
                                 </div>
                                 <div class="like pull-right">
                                     {!! Form::open(['method'=>'post','action'=>'Candidate\CandidateSavedJobsController@store']) !!}
@@ -88,7 +92,7 @@
                             @endforeach
                                 <a href="{{route('candidate.jobs.recommended')}}" class="view">View All</a>
                         </div>
-                        <div id="saved" class="tab-contents">
+                        <div id="savedd" class="tab-contents">
                             @foreach($candidate->saved_jobs as $job )
                                 @if($job->company)
                                 <div class="job-title">

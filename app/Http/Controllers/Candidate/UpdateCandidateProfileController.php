@@ -226,6 +226,11 @@ class UpdateCandidateProfileController extends Controller
             'job_industries_tags.*'=>'numeric',
         ]);
 
+        $this->validate($request, [
+        'job_industries' => 'required',
+        'job_industries_tags' => 'required',
+    ]);
+
         $candidate=Auth::guard('candidate')->user();
         if (count($request->input('job_industries')) <3){
             Session::flash('danger','You Should at Least Choose Three Job Industries');

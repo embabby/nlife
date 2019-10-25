@@ -68,7 +68,7 @@ class RegisterController extends Controller
             'first_name' => 'required|max:255',
             'last_name' => 'required|max:255',
             'job_title' => 'required|max:300',
-            'phone' => 'required',
+            'phone' => 'required|max:30',
             'email' => 'required|email|max:255|unique:employers',
             'password' => 'required|min:6|confirmed',
             'country_id'=>'required|numeric',

@@ -26,7 +26,7 @@ class CompanyUsersController extends Controller
             'job_title'=>'required|string|max:200',
             'phone'=>'required|string|max:200',
             'email'=>'required|email|max:200|unique:employers',
-            'password'=>'required',
+            'password'=>'required|min:6',
         ]);
         $employer=Auth::guard('employer')->user();
         $first_name=sanitize($request->input('first_name'));
@@ -51,7 +51,7 @@ class CompanyUsersController extends Controller
 
     public function update(Request $request,$id){
         $request->validate([
-            'password'=>'required',
+            'password'=>'required|min:6',
             'first_name'=>'required|string|max:200',
             'last_name'=>'required|string|max:200',
             'job_title'=>'required|string|max:200',
@@ -80,7 +80,7 @@ class CompanyUsersController extends Controller
     public function changePassword(Request $request,$id){
         $request->validate([
             'old_password'=>'required',
-            'password'=>'required|confirmed'
+            'password'=>'required|min:6|confirmed'
         ]);
 
         $employer=Employer::find($id);
