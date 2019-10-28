@@ -81,6 +81,10 @@ Route::group(['prefix' => 'candidate'], function () {
         Route::get('jobs/applied','Candidate\HomeController@applied')->name('candidate.jobs.applied');
         Route::get('jobs/saved','Candidate\HomeController@saved')->name('candidate.jobs.saved');
         Route::get('jobs/recommended','Candidate\HomeController@recommended')->name('candidate.jobs.recommended');
+        
+        //Search
+        Route::get('search','Candidate\HomeController@search')->name('candidate.search');
+
     });
 });
 

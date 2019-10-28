@@ -25,7 +25,7 @@
                                         <span>{{ $candidate->activity->count()}}</span>
                                     </div>
                                     <div class="shortlist">
-                                        <h6>Shortlist</h6>
+                                        <h6>Shortlisted</h6>
                                         <span>{{ $candidate->activity->where('job_application_status_id',\Config::get('constants.SHORTLISTED'))->count()}}</span>
                                     </div>
                                     <div class="rejected">
@@ -117,7 +117,7 @@
                             </div>
                                 @endif
                             @endforeach
-                                <a href="{{route('candidate.jobs.saved')}}" calss="view">View All</a>
+                                <a href="{{route('candidate.jobs.saved')}}" style="background-color: #5fc014;color:white;padding: 5px 15px;border-radius: 3px;" calss="view">View All</a>
 
                         </div>
                         <div id="applied" class="tab-contents">

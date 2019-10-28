@@ -82,4 +82,12 @@ class HomeController extends Controller
 
     }
 
+
+    public function search(Request $request){
+        // return $request->input;
+        $candidate=Auth::guard('candidate')->user();
+        $searched_jobs = Job::where('job_title','like',"%{$request->input}%")->orderBy('id','DESC')->paginate(12);
+        return view('candidate.jobs.search',compact('candidate','searched_jobs'));
+    }
+
 }

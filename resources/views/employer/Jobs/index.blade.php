@@ -46,7 +46,7 @@
                                                                 <tr>
                                                                     <td>{{$counter}}</td>
                                                                     <td><a href="{{route('employer-jobs.applied',$job->slug)}}">{{$job->job_title}}</a></td>
-                                                                    <td>{{ $job->jobApplicants->where('job_application_status_id',\Config::get('constants.APPLIED'))->count()}}</td>
+                                                                    <td>{{ $job->jobApplicants->count()}}</td>
                                                                     <td>{{ $job->jobApplicants->where('job_application_status_id',\Config::get('constants.SHORTLISTED'))->count()}}</td>
                                                                     <td>{{ $job->jobApplicants->where('job_application_status_id',\Config::get('constants.ACCEPTED'))->count()}}</td>
                                                                     <td>{{ $job->jobApplicants->where('job_application_status_id',\Config::get('constants.REJECTED'))->count()}}</td>

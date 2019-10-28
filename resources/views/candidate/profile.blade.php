@@ -47,7 +47,7 @@
                                     <h5>To  : <span style="color: #6E6F71"> {{$candidate->university_end_date}} </span></h5>
                                     <h5>University  : <span style="color: #6E6F71"> {{$candidate->university}} </span></h5>
                                     <h5>Faculty  : <span style="color: #6E6F71"> {{$candidate->faculty}} </span></h5>
-                                    <h5>Major  : <span style="color: #6E6F71"> {{$candidate->major}} </span></h5>
+
                                     <h5>Major  : <span style="color: #6E6F71"> {{$candidate->major}} </span></h5>
                                     <h5>Degree  : <span style="color: #6E6F71"> {{$candidate->degree}} </span></h5>
                                 </li>

@@ -504,6 +504,7 @@
                             <p><strong> University</strong> {{$candidate->university}}</p>
                             <p><strong> Faculty</strong> {{$candidate->faculty}}</p>
                             <p><strong> Major</strong> {{$candidate->major}}</p>
+                            <p><strong> Degree</strong> {{$candidate->degree}}</p>
                             <h5>{{$candidate->university_start_date?'From':''}} <span class="mystart"> {{$candidate->university_start_date}}</span> {{$candidate->university_end_date?'To':''}}<span class="myend">{{$candidate->university_end_date}}</span></h5>                    
 
                         </div>

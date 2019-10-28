@@ -269,6 +269,7 @@ class UpdateCandidateProfileController extends Controller
         $candidate=Auth::guard('candidate')->user();
         if (Hash::check($request->input('old_password'),$candidate->password)){
             $candidate->password=bcrypt($request->input('password'));
+            $candidate->save();
             Session::flash('success','Password Changes Successfully');
             return redirect()->back();
         }else{
