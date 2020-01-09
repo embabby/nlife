@@ -59,24 +59,35 @@
                     <div class="col-lg-12 pa_l pa_r">
                         <div class="mainsearch wow fadeInDown">
                             <div class="row">
+
                                 <div class="col-md-12">
                                     <div  id="search_Bar_home ">
                                         <div class="container">
+
                                             <div class="row">
+                                                @if(Auth::guard('candidate')->check())
+                                                <form action="{{url('/candidate/search')}}" >
+                                                @else
+                                                <form action="{{url('/candidate/guestsearch')}}" >
+                                                @endif
+
                                                 <div class="col-lg-9 col-lg-offset-1 col-md-10 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-sm-offset-0 pa_l pa_r">
                                                     <div class="search-bar">
                                                         <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
-                                                            <input class="job" type="text" id="input1" placeholder=" &#xf0b1; Job Title , Keywords ,or Company">
+                                                            <input class="job" type="text" id="input1" name="input" placeholder=" &#xf0b1; Job Title , Keywords ,or Company">
                                                         </div>
                                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                                                            <button class="btn btn-success  search1"><i class="fa fa-search "></i></button>
+                                                            <button type="submit" class="btn btn-success  search1"><i class="fa fa-search "></i></button>
                                                         </div>
                                                     </div>
                                                 </div>
+                                            </form>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div><!--./col-->
+
                                 <div class="col-lg-12">
                                     <div class="uploading">
                                         <div class="col-lg-3 col-lg-offset-3 col-md-3 col-md-offset-2 col-sm-6 col-sm-offset-0">

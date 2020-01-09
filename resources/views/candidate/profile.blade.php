@@ -7,7 +7,7 @@
                 <div class="leter">
                     <div class="navigation-bar wow fadeInDown">
                         <div class="image">
-                            @if($candidate->avatar && Storage::exists($candidate->avatar))
+                            @if($candidate->avatar)
                                 <img src="{{url(asset('avatars/'.$candidate->avatar))}}" class="img-responsive">
                             @else
                                 <img src="{{url(asset('avatars/'.$candidate->gender->name.'.png'))}}"  class="img-responsive" alt="">

@@ -20,12 +20,27 @@ class JobsController extends Controller
 {
 
     public function index(){
-        $jobs=Job::orderBy('id','DESC')->paginate('9');
         $countries=Country::all();
         $cities=City::all();
         $career_levels=CareerLevel::all();
         $job_types=JobType::all();
         $job_industries=JobIndustry::all();
+
+        // $jobs=Job::orderBy('id','DESC')->paginate('9');
+        $jobs=Job::orderBy('id','DESC');
+
+        if(isset(request()->country)) {
+          $jobs = $jobs->where('country_id',request()->country);
+        }
+        if(isset(request()->city)) {
+          $jobs = $jobs->where('city_id',request()->city);
+        }
+
+        if(isset(request()->level)) {
+          $jobs = $jobs->where('career_level_id',request()->level);
+        }
+
+        $jobs = $jobs->paginate('9');
         return view('jobs',compact('jobs','countries','cities','career_levels','job_types','job_industries'));
     }
 

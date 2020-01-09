@@ -86,6 +86,8 @@ Route::group(['prefix' => 'candidate'], function () {
         Route::get('search','Candidate\HomeController@search')->name('candidate.search');
 
     });
+
+    Route::get('guestsearch','Candidate\HomeController@guestSearch')->name('candidate.guestSearch');
 });
 
 

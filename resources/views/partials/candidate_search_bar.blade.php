@@ -2,7 +2,11 @@
     <div  id="searchBar">
         <div class="container">
             <div class="row">
+                @if(Auth::guard('candidate')->check())
                 <form action="{{url('/candidate/search')}}" >
+                    @else
+                    <form action="{{url('/candidate/guestsearch')}}" >
+                    @endif
 
                     <div class="col-lg-9 col-lg-offset-1">
                         <div class="search-bar">

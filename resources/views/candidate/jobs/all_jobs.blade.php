@@ -18,7 +18,7 @@
                                 </div>
                                 <div class="panel-body">
                                     @foreach($countries as $country)
-                                        <input type="checkbox" name="location1" >{{$country->name}}<span>({{$country->jobs->count()}})</span><br>
+                                        <input type="checkbox" name="country" value="{{$country->id}}">{{$country->name}}<span>({{$country->jobs->count()}})</span><br>
                                     @endforeach
 
                                 </div>
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="panel-body">
                                     @foreach($cities as $city)
-                                        <input type="checkbox" name="location1" >{{$city->name}}<span>({{$city->jobs->count()}})</span><br>
+                                        <input type="checkbox" name="city" value="{{$city->id}}" >{{$city->name}}<span>({{$city->jobs->count()}})</span><br>
                                     @endforeach
                                 </div>
                             </div>
@@ -45,7 +45,7 @@
                                 </div>
                                 <div class="panel-body">
                                     @foreach($job_industries as $job_industry)
-                                        <input type="checkbox" name="cat1" >{{$job_industry->name}}<span> ({{$job_industry->jobs->count()}})</span><br>
+                                        <input type="checkbox" name="job_industry" >{{$job_industry->name}}<span> ({{$job_industry->jobs->count()}})</span><br>
                                     @endforeach
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                 </div>
                                 <div class="panel-body">
                                     @foreach($career_levels as $career_level)
-                                        <input type="checkbox" name="junior" >{{$career_level->name}}<span> ({{$career_level->jobs->count()}})</span><br>
+                                        <input type="checkbox" name="level" value="{{$career_level->id}}" >{{$career_level->name}}<span> ({{$career_level->jobs->count()}})</span><br>
                                     @endforeach
 
                                 </div>

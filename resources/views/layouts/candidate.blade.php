@@ -43,10 +43,10 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown pic" >
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        @if($candidate->avatar && Storage::exists($candidate->avatar))
-                            <img src="{{url(asset('storage/'.$candidate->avatar))}}" class="img-responsive">
+                        @if($candidate->avatar)
+                            <img src="{{url(asset('avatars/'.$candidate->avatar))}}" class="img-responsive">
                         @else
-                            <img src="{{url(asset('storage/'.gender_image($candidate->gender_id)))}}"  class="img-responsive" alt="">
+                            <img src="{{url(asset('avatars/'.$candidate->gender->name.'.png'))}}"  class="img-responsive" alt="">
                         @endif
                     </a>
                     <ul class="dropdown-menu notify-drop">

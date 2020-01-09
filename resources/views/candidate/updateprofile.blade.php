@@ -6,11 +6,14 @@
     <div class="header">
         <div class="container">
             <div class="info1 wow fadeInDown">
-                @if($candidate->avatar && Storage::exists($candidate->avatar))
-                    <img src="{{url(asset('storage/'.$candidate->avatar))}}" class="img-responsive">
+         
+
+                @if($candidate->avatar)
+                    <img src="{{url(asset('avatars/'.$candidate->avatar))}}" class="img-responsive">
                 @else
-                    <img src="{{url(asset('storage/'.gender_image($candidate->gender_id)))}}"  class="img-responsive" alt="">
+                    <img src="{{url(asset('avatars/'.$candidate->gender->name.'.png'))}}"  class="img-responsive" alt="">
                 @endif
+
                 <h3>{{$candidate->first_name}} {{$candidate->last_name}}  </h3>
                 <p class="text-center job">{{$candidate->job_title}} </p>
                 <button class="btn btn-primary"  type="button" data-toggle="modal" data-target="#exampleModal">Change Password</button>

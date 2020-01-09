@@ -72,22 +72,42 @@ class HomeController extends Controller
 
     public function all_jobs(){
         $candidate=Auth::guard('candidate')->user();
-        $jobs=Job::orderBy('id','DESC')->paginate('9');
         $countries=Country::all();
         $cities=City::all();
         $career_levels=CareerLevel::all();
         $job_types=JobType::all();
         $job_industries=JobIndustry::all();
+
+        // $jobs=Job::orderBy('id','DESC')->paginate('9');
+        $jobs=Job::orderBy('id','DESC');
+
+        if(isset(request()->country)) {
+          $jobs = $jobs->where('country_id',request()->country);
+        }
+        if(isset(request()->city)) {
+          $jobs = $jobs->where('city_id',request()->city);
+        }
+
+        if(isset(request()->level)) {
+          $jobs = $jobs->where('career_level_id',request()->level);
+        }
+
+        $jobs = $jobs->paginate('9');
         return view('candidate.jobs.all_jobs',compact('candidate','jobs','countries','cities','career_levels','job_types','job_industries'));
 
     }
 
 
     public function search(Request $request){
-        // return $request->input;
         $candidate=Auth::guard('candidate')->user();
         $searched_jobs = Job::where('job_title','like',"%{$request->input}%")->orderBy('id','DESC')->paginate(12);
         return view('candidate.jobs.search',compact('candidate','searched_jobs'));
+    }
+
+
+    public function guestSearch(Request $request){
+        $searched_jobs = Job::where('job_title','like',"%{$request->input}%")->orderBy('id','DESC')->paginate(12);
+        return view('candidate.jobs.guest_search',compact('searched_jobs'));
     }
 
 }
